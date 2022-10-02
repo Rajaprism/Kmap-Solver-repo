@@ -1,4 +1,4 @@
-# Kmap-Solver-repo
+# adding two regions and return name of finally expanded region
 def adder(a,b):
     n=len(a)
     m=len(b)
@@ -27,10 +27,7 @@ def adder(a,b):
         else:
             return a
     return a
-
-#p=expanded region
-#q=cell 
-# this function true if q lies in p else return false
+# this function true if q lies in p else return false,p=expanded region,q=cell 
 def check_pq(p,q):
     for i in range(0,len(p)):
         if p[i]!="'":
@@ -62,7 +59,7 @@ def length(p):
             n+=1
     return n
 
-#main funtion
+# main function that solve kmap
 def comb_function_expansion(func_TRUE,func_DC):
     all_terms=func_DC+func_TRUE
     new_terms=[]
@@ -80,7 +77,7 @@ def comb_function_expansion(func_TRUE,func_DC):
                 new_terms=new_terms+check
             else:
                 new_terms+=check
-    # definition of expand
+    # helper of main function, definition of expand
     def expand(new_terms):
         terms=[]
         for i in range(0,len(new_terms)):
